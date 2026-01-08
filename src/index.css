@@ -1,17 +1,28 @@
 @import "tailwindcss";
 
-@media(max-width: 700px){
+@theme {
+  --animate-marquee: marquee 10s linear infinite;
 
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
 
-@media(min-width: 1024px) and (max-width: 1280px){
+@media (max-width: 700px) {
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
   .letter-container {
     width: clamp(80px, 22vw, 150px);
   }
-    .lora {
+  .lora {
     font-size: clamp(80px, 15vw, 320px);
   }
-  
 }
 
 .letter-container {
@@ -20,9 +31,7 @@
   display: flex;
 }
 
-
-
-.letter{
+.letter {
   transform: translateX(-50%);
   animation: slideIn 1s forwards;
   animation-delay: var(--delay);
@@ -30,10 +39,13 @@
 }
 
 @keyframes slideIn {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
-
 
 .lora {
   font-family: "Lora", serif;
@@ -54,12 +66,11 @@ body {
   background: white;
   overflow: hidden;
 }
-.slide-image{
+.slide-image {
   width: 25%;
   position: absolute;
   z-index: 10;
 }
-
 
 /* Top bar */
 .top-bar {
@@ -80,14 +91,14 @@ body {
 }
 
 /* Buttons */
-button {
+/* button {
   cursor: pointer;
   border: none;
   background: #000;
   color: #fff;
   padding: 4px 10px;
   border-radius: 4px;
-}
+} */
 
 /* Dots */
 .dots {
@@ -127,10 +138,8 @@ button {
   opacity: 1;
 }
 
-
-
 .progress-bar {
-  width: 100%;      /* change as needed */
+  width: 100%; /* change as needed */
   height: 2px;
   background: #ffffff;
   overflow: hidden;

@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-
-
+import SOIL from "./components/SOIL";
+import Works from "./pages/works";
 
 export default function App() {
   return (
-    <div>
+    <>
+      <SOIL />
       <Slider />
-
-    </div>
+      <Works />
+    </>
   );
 }
 const Slider: React.FC = () => {
@@ -20,11 +21,21 @@ const Slider: React.FC = () => {
   const progressTl = useRef<gsap.core.Tween | null>(null);
 
   const slides = [
-    <div key="1" className="slide active">Slide 1</div>,
-    <div key="2" className="slide active">Slide 2</div>,
-    <div key="3" className="slide active">Slide 3</div>,
-    <div key="4" className="slide active">Slide 4</div>,
-    <div key="5" className="slide active">Slide 5</div>,
+    <div key="1" className="slide active">
+      Slide 1
+    </div>,
+    <div key="2" className="slide active">
+      Slide 2
+    </div>,
+    <div key="3" className="slide active">
+      Slide 3
+    </div>,
+    <div key="4" className="slide active">
+      Slide 4
+    </div>,
+    <div key="5" className="slide active">
+      Slide 5
+    </div>,
   ];
 
   const goTo = (i: number) => setIndex((i + slides.length) % slides.length);
@@ -51,7 +62,7 @@ const Slider: React.FC = () => {
       { scaleX: 1, duration: 1, ease: "power2.out" }
     );
   }, [index]);
-    useEffect(() => {
+  useEffect(() => {
     if (!progressTl.current) return;
     playing ? progressTl.current.play() : progressTl.current.pause();
   }, [playing]);
@@ -59,7 +70,6 @@ const Slider: React.FC = () => {
   return (
     <div className="slider">
       <div className="top-bar">
-      
         <div className="left-controls">
           <div className="dots">
             {slides.map((_, i) => (
@@ -92,19 +102,18 @@ const Slider: React.FC = () => {
           </div>
         ))}
       </div> */}
-            <div className="progress-bar">
-          <div ref={progressRef} className="fill" />
-        </div>
-            <div className="progress-bar">
-          <div ref={progressRef} className="fill" />
-        </div>
-            <div className="progress-bar">
-          <div ref={progressRef} className="fill" />
-        </div>
-            <div className="progress-bar">
-          <div ref={progressRef} className="fill" />
-        </div>
+      <div className="progress-bar">
+        <div ref={progressRef} className="fill" />
+      </div>
+      <div className="progress-bar">
+        <div ref={progressRef} className="fill" />
+      </div>
+      <div className="progress-bar">
+        <div ref={progressRef} className="fill" />
+      </div>
+      <div className="progress-bar">
+        <div ref={progressRef} className="fill" />
+      </div>
     </div>
   );
 };
-
