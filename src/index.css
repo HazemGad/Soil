@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --animate-marquee: marquee 10s linear infinite;
+  --animate-marquee: marquee 15s linear infinite;
 
   @keyframes marquee {
     0% {
@@ -55,7 +55,7 @@
 
 body {
   font-family: Arial;
-  background: #eee;
+  background: white;
 }
 
 .slider {
