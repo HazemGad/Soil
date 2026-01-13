@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import RightArrow from "../../../icons/RightArrow";
-import useInView from "../../../hooks/useInView";
 import AnimatedLine from "./AnimatedLine";
 import AnimatedButton from "./AnimatedButton";
+import useInView from "@hooks/useInView";
+import RightArrow from "@icons/RightArrow";
 
 type WorkCardProps = {
   imageSrc: string;
